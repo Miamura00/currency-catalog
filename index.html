@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог купюр мира</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Каталог купюр мира</h1>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск по стране, номиналу...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Все купюры</a></li>
+                    <li><a href="#" id="favorites-link">Избранное</a></li>
+                    <li><a href="#" id="wishlist-link">Хочу купить</a></li>
+                    <li><a href="#" id="purchased-link">Купленные</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filters">
+            <select id="country-filter">
+                <option value="">Все страны</option>
+                <!-- Динамически заполнится из JS -->
+            </select>
+            <select id="denomination-filter">
+                <option value="">Все номиналы</option>
+                <!-- Динамически заполнится из JS -->
+            </select>
+            <select id="year-filter">
+                <option value="">Все годы</option>
+                <!-- Динамически заполнится из JS -->
+            </select>
+        </div>
+
+        <div class="banknotes-grid" id="banknotes-container">
+            <!-- Купюры будут загружаться здесь -->
+        </div>
+    </main>
+
+    <div class="banknote-modal" id="banknote-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img id="modal-main-image" src="" alt="">
+                    <div class="thumbnail-container" id="thumbnail-container"></div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <table>
+                        <tr>
+                            <th>Страна:</th>
+                            <td id="modal-country"></td>
+                        </tr>
+                        <tr>
+                            <th>Номинал:</th>
+                            <td id="modal-denomination"></td>
+                        </tr>
+                        <tr>
+                            <th>Год:</th>
+                            <td id="modal-year"></td>
+                        </tr>
+                        <tr>
+                            <th>Серия:</th>
+                            <td id="modal-series"></td>
+                        </tr>
+                        <tr>
+                            <th>Размеры:</th>
+                            <td id="modal-size"></td>
+                        </tr>
+                        <tr>
+                            <th>Материал:</th>
+                            <td id="modal-material"></td>
+                        </tr>
+                    </table>
+                    <p id="modal-description"></p>
+                    <div class="modal-actions">
+                        <button id="add-to-favorites"><i class="far fa-star"></i> В избранное</button>
+                        <button id="add-to-wishlist"><i class="fas fa-shopping-cart"></i> Хочу купить</button>
+                        <button id="mark-as-purchased"><i class="fas fa-check-circle"></i> Куплено</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Каталог купюр мира. Все права об ананасены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
